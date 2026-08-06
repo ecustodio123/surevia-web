@@ -8,6 +8,7 @@ import { useMediaQuery } from '../hooks/useMediaQuery'
 
 export function CoverageView() {
   const [activeCoverageIndex, setActiveCoverageIndex] = useState(0)
+  const [isCarouselHovered, setIsCarouselHovered] = useState(false)
   const isMobileCoverage = useMediaQuery('(max-width: 900px)')
   const coverageStep = isMobileCoverage ? 1 : 3
   const coverageGroupStarts = useMemo(
@@ -39,12 +40,16 @@ export function CoverageView() {
   }, [coverageGroupStarts, coverageStep])
 
   useEffect(() => {
+    if (isCarouselHovered) {
+      return undefined
+    }
+
     const timer = window.setInterval(() => {
       goToCoverage(1)
     }, 4200)
 
     return () => window.clearInterval(timer)
-  }, [goToCoverage])
+  }, [goToCoverage, isCarouselHovered])
 
   return (
     <section className="content-page">
@@ -64,7 +69,11 @@ export function CoverageView() {
           </div>
         </div>
 
-        <div className="carousel-window">
+        <div
+          className="carousel-window"
+          onMouseEnter={() => setIsCarouselHovered(true)}
+          onMouseLeave={() => setIsCarouselHovered(false)}
+        >
           <AnimatePresence mode="wait">
             <motion.div
               className="coverage-slide-page"

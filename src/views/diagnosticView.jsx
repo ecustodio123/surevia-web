@@ -56,8 +56,8 @@ export function DiagnosticView() {
 
       <div className="statement-band">
         <p>
-          Nuestro enfoque no empieza con una cotización. Empieza con entender cómo se mueve
-          tu carga y dónde se expone.
+          Nuestro enfoque no empieza con una cotización. Inicia con entender cómo se mueve
+          tu mercadería y dónde se expone.
         </p>
       </div>
 

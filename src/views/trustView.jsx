@@ -23,7 +23,7 @@ export function TrustView() {
         <article>
           <Handshake size={24} />
           <h2>Lloyd's</h2>
-          <p>Acceso a un mercado especializado en riesgos logísticos complejos.</p>
+          <p>Acceso al mercado en el que nació el seguro de mercancías, lo que lo hace altamente especializado en riesgos logísticos complejos.</p>
         </article>
         <article>
           <MapPinned size={24} />

@@ -358,25 +358,25 @@ main {
 
 .hero-proof-card span {
   display: block;
+  font-size: clamp(1.04rem, 1.4vw, 1.24rem);
+  line-height: 1.08;
 }
 
 .hero-proof-card strong,
 .hero-proof-card small {
   display: inline;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .hero-proof-card strong {
   color: var(--ink);
-  font-size: clamp(1.22rem, 1.7vw, 1.52rem);
-  line-height: 1.03;
   font-weight: 800;
 }
 
 .hero-proof-card small {
   margin-left: 0.24em;
   color: var(--ink);
-  font-size: clamp(1.04rem, 1.38vw, 1.24rem);
-  line-height: 1.03;
   font-weight: 400;
 }
 
@@ -390,7 +390,7 @@ main {
 
 .hero-proof-card .years-prefix {
   display: inline;
-  font-size: 0.62em;
+  font-size: 1em;
   font-weight: 800;
 }
 
@@ -890,10 +890,6 @@ h1 {
 
 .trust-page .about-card {
   margin-top: 0;
-}
-
-.steps-heading {
-  max-width: 760px;
 }
 
 .steps-layout {
@@ -1432,11 +1428,20 @@ h1 {
 
 .coverage-slide-copy span {
   position: absolute;
-  top: 22px;
-  left: 24px;
-  color: rgba(255, 255, 255, 0.64);
+  top: 20px;
+  left: 22px;
+  display: inline-grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  color: white;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
   font-size: 13px;
   font-weight: 800;
+  font-variant-numeric: tabular-nums;
 }
 
 .coverage-slide-copy svg {
@@ -1886,6 +1891,7 @@ h1 {
 
   .home-hero-carousel {
     min-height: calc(100svh - 83px);
+    padding-bottom: 34px;
   }
 
   .home-hero-content {
@@ -2012,16 +2018,16 @@ h1 {
     top: 360px;
   }
 
-  .hero-proof-card strong {
-    font-size: 1.12rem;
-  }
-
-  .hero-proof-card small {
+  .hero-proof-card span {
     font-size: 1rem;
   }
 
   .home-hero-links a {
     min-height: 56px;
+  }
+
+  .home-hero-carousel {
+    padding-bottom: 28px;
   }
 
   .hero-actions {
