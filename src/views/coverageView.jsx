@@ -62,22 +62,6 @@ export function CoverageView() {
             <p className="eyebrow">Soluciones principales</p>
             <h2>Coberturas para operaciones reales.</h2>
           </div>
-          <div className="carousel-actions">
-            <button
-              type="button"
-              onClick={() => goToCoverage(-1)}
-              aria-label="Grupo anterior de coberturas"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              type="button"
-              onClick={() => goToCoverage(1)}
-              aria-label="Siguiente grupo de coberturas"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
         </div>
 
         <div className="carousel-window">
@@ -118,6 +102,22 @@ export function CoverageView() {
               aria-current={startIndex === activeCoverageIndex ? 'true' : undefined}
             />
           ))}
+        </div>
+        <div className="carousel-actions">
+          <button
+            type="button"
+            onClick={() => goToCoverage(-1)}
+            aria-label="Grupo anterior de coberturas"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button
+            type="button"
+            onClick={() => goToCoverage(1)}
+            aria-label="Siguiente grupo de coberturas"
+          >
+            <ChevronRight size={20} />
+          </button>
         </div>
       </section>
 

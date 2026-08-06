@@ -31,10 +31,7 @@ body {
   min-width: 320px;
   margin: 0;
   font-family: var(--font-body);
-  background:
-    linear-gradient(90deg, rgba(76, 40, 126, 0.05) 1px, transparent 1px) 50% 0 /
-      80px 80px,
-    var(--bg);
+  background: var(--bg);
 }
 
 button,

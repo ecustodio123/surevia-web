@@ -16,9 +16,39 @@ export function HomeView({ countersReady }) {
     ))
   }
   const proofPoints = [
-    ['years', 'de trayectoria', '/respaldo'],
-    ['Coberturas nacionales e internacionales', '', '/coberturas'],
-    ['Respaldados por Lloyd’s', '', '/respaldo'],
+    {
+      key: 'years',
+      path: '/respaldo',
+      label: '+ de 10 años de trayectoria',
+      content: (
+        <>
+          <strong><AnimatedYears start={countersReady} /></strong>
+          <small>de trayectoria</small>
+        </>
+      ),
+    },
+    {
+      key: 'coverage',
+      path: '/coberturas',
+      label: 'Coberturas nacionales e internacionales',
+      content: (
+        <>
+          <strong>Coberturas</strong>
+          <small>nacionales e internacionales</small>
+        </>
+      ),
+    },
+    {
+      key: 'lloyds',
+      path: '/respaldo',
+      label: 'Respaldado por Lloyd’s',
+      content: (
+        <>
+          <small>Respaldado por </small>
+          <strong>Lloyd’s</strong>
+        </>
+      ),
+    },
   ]
   const riskPoints = [
     'Un retraso cuesta dinero.',
@@ -38,16 +68,16 @@ export function HomeView({ countersReady }) {
   return (
     <div className="home-page">
       <section className="home-hero-carousel" aria-label="Presentación principal">
-        <AnimatePresence mode="wait">
+        <AnimatePresence initial={false}>
           <motion.img
             className="home-hero-image"
             key={activeSlide.image}
             src={activeSlide.image}
             alt=""
-            initial={{ opacity: 0, scale: 1.03 }}
+            initial={{ opacity: 0 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
           />
         </AnimatePresence>
 
@@ -59,12 +89,9 @@ export function HomeView({ countersReady }) {
         </div>
 
         <div className="home-hero-controls" aria-label="Indicadores principales">
-          {proofPoints.map(([value, label, path]) => (
-            <AppLink className="hero-proof-card" key={value} to={path}>
-              <span>
-                <strong>{value === 'years' ? <AnimatedYears start={countersReady} /> : value}</strong>
-                {label && <small>{label}</small>}
-              </span>
+          {proofPoints.map(({ key, path, label, content }) => (
+            <AppLink aria-label={label} className="hero-proof-card" key={key} to={path}>
+              <span>{content}</span>
               <ArrowRight size={22} />
             </AppLink>
           ))}
