@@ -11,8 +11,7 @@ import {
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok, FaWhatsapp } from 'react-icons/fa'
 
 import containerPortImage from '../assets/surevia/optimized/container-port.jpg'
-import diagnosticImageOne from '../assets/surevia/optimized/surevia-diagnostic-01.jpg'
-import diagnosticImageTwo from '../assets/surevia/optimized/surevia-diagnostic-02.jpg'
+import diagnosticCommerceImage from '../assets/surevia/coberturas/optimized/comercio-exterior-1.jpg'
 import cargaPerecibleImage2 from '../assets/surevia/coberturas/optimized/carga-perecible-2.jpg'
 import cargaSecaImage2 from '../assets/surevia/coberturas/optimized/carga-seca-2.jpg'
 import caucionSunatImage from '../assets/surevia/coberturas/optimized/caucion-frente-a-sunat.jpg'
@@ -142,8 +141,7 @@ export const homeSlides = [
 ]
 
 export const diagnosticImages = {
-  primary: diagnosticImageOne,
-  secondary: diagnosticImageTwo,
+  primary: diagnosticCommerceImage,
 }
 
 export const trustVideoPoster = containerPortImage

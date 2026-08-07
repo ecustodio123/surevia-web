@@ -78,7 +78,7 @@ export function ContactView() {
             Cuéntanos qué necesitas proteger y te ayudamos a orientar la cobertura.
           </p>
           <div className="contact-card">
-            <strong>Victoria Goicochea</strong>
+            <strong style={{color: '#08060d'}}>Victoria Goicochea</strong>
             <strong>Business Developer</strong>
             <a href="mailto:gerencia@sureviagroup.com">
               <Mail size={18} />

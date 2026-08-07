@@ -38,8 +38,7 @@ export function DiagnosticView() {
 
       <section className="diagnostic-flow" aria-label="Proceso de diagnóstico">
         <div className="diagnostic-flow-media">
-          <img src={diagnosticImages.primary} alt="Inspección de carga para diagnóstico logístico" />
-          <img src={diagnosticImages.secondary} alt="Equipo revisando documentación de operación logística" />
+          <img src={diagnosticImages.primary} alt="Operación de comercio exterior para diagnóstico logístico" />
         </div>
         <div className="diagnostic-flow-steps">
           {steps.map(([number, title, text]) => (
