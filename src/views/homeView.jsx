@@ -143,7 +143,7 @@ export function HomeView({ countersReady }) {
       </section>
 
       <section className="home-steps" aria-labelledby="home-steps-title">
-        <div className="steps-heading">
+        <div className="steps-heading" style={{marginTop: '3rem'}}>
           <p className="eyebrow">Cómo protegemos tu operación</p>
           <h2 id="home-steps-title">Tres pasos para convertir el riesgo en una estrategia.</h2>
         </div>
