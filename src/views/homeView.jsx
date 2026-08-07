@@ -19,7 +19,7 @@ export function HomeView({ countersReady }) {
     {
       key: 'years',
       path: '/respaldo',
-      label: '+ de 10 años de trayectoria',
+      label: '+ De 10 años de trayectoria',
       content: (
         <>
           <strong><AnimatedYears start={countersReady} /></strong>

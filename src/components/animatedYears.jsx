@@ -24,7 +24,7 @@ export function AnimatedYears({ start = true }) {
 
   return (
     <span className="years-counter">
-      <span className="years-prefix">+ de</span>
+      <span className="years-prefix">+ De</span>
       <span className="years-number">{value}</span>
       <span className="years-label">años</span>
     </span>

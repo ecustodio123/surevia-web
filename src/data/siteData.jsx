@@ -13,14 +13,10 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTiktok, FaWhatsapp } from 're
 import containerPortImage from '../assets/surevia/optimized/container-port.jpg'
 import diagnosticImageOne from '../assets/surevia/optimized/surevia-diagnostic-01.jpg'
 import diagnosticImageTwo from '../assets/surevia/optimized/surevia-diagnostic-02.jpg'
-import cargaPerecibleImage from '../assets/surevia/coberturas/optimized/carga-perecible.jpg'
 import cargaPerecibleImage2 from '../assets/surevia/coberturas/optimized/carga-perecible-2.jpg'
-import cargaSecaImage from '../assets/surevia/coberturas/optimized/carga-seca-1.jpg'
 import cargaSecaImage2 from '../assets/surevia/coberturas/optimized/carga-seca-2.jpg'
 import caucionSunatImage from '../assets/surevia/coberturas/optimized/caucion-frente-a-sunat.jpg'
-import contenedoresImg from '../assets/surevia/coberturas/optimized/contenedores.jpg'
 import contenedoresImg2 from '../assets/surevia/coberturas/optimized/contenedores-2.jpg'
-import rcMtcImage from '../assets/surevia/coberturas/optimized/rc-frente-al-mtc.jpg'
 import rcMtcImage2 from '../assets/surevia/coberturas/optimized/rc-frente-al-mtc-2.jpg'
 import seguroVehicularImage from '../assets/surevia/coberturas/optimized/seguro-vehicular.jpg'
 import transporteLocalImage from '../assets/surevia/coberturas/optimized/transporte-local.jpg'
@@ -44,19 +40,7 @@ export const coverageItems = [
     icon: Container,
     title: 'Carga seca',
     text: 'Cobertura puerta a puerta ante averías, robo, asalto, guerra y huelgas.',
-    image: cargaSecaImage,
-  },
-  {
-    icon: Container,
-    title: 'Carga seca',
-    text: 'Cobertura puerta a puerta ante averías, robo, asalto, guerra y huelgas.',
     image: cargaSecaImage2,
-  },
-  {
-    icon: Globe2,
-    title: 'Cargas perecibles',
-    text: 'Todo riesgo con refrigeración, cold treatment y continuidad de seguro.',
-    image: cargaPerecibleImage,
   },
   {
     icon: Globe2,
@@ -74,12 +58,6 @@ export const coverageItems = [
     icon: FileCheck2,
     title: 'RC frente al MTC',
     text: 'Responsabilidad civil para agentes de carga ante errores u omisiones.',
-    image: rcMtcImage,
-  },
-  {
-    icon: FileCheck2,
-    title: 'RC frente al MTC',
-    text: 'Responsabilidad civil para agentes de carga ante errores u omisiones.',
     image: rcMtcImage2,
   },
   {
@@ -87,12 +65,6 @@ export const coverageItems = [
     title: 'Caución frente a SUNAT',
     text: 'Asesoría y emisión de pólizas caución para agencias de carga.',
     image: caucionSunatImage,
-  },
-  {
-    icon: BadgeCheck,
-    title: 'Contenedores',
-    text: 'Cobertura del contenedor desde puerto hasta su devolución.',
-    image: contenedoresImg,
   },
   {
     icon: BadgeCheck,

@@ -152,26 +152,49 @@
 .brand {
   display: inline-flex;
   align-items: center;
+  gap: 10px;
   flex: 0 0 auto;
   color: var(--ink);
   text-decoration: none;
 }
 
-.brand-logo {
+.brand-symbol {
   display: block;
-  width: 156px;
-  height: 51px;
+  width: 44px;
+  height: 52px;
   color: var(--purple);
   background: currentColor;
-  mask: url('./assets/brand/surevia-logo-mask.png') center / contain no-repeat;
-  -webkit-mask: url('./assets/brand/surevia-logo-mask.png') center / contain no-repeat;
+  mask: url('./assets/brand/surevia-symbol-mask.png') center / contain no-repeat;
+  -webkit-mask: url('./assets/brand/surevia-symbol-mask.png') center / contain no-repeat;
+}
+
+.brand-wordmark {
+  display: grid;
+  gap: 0;
+  color: var(--ink);
+  line-height: 0.9;
   transition:
     color 180ms ease,
     transform 180ms ease;
 }
 
-.brand:hover .brand-logo {
-  color: var(--ink);
+.brand-wordmark strong,
+.brand-wordmark span {
+  display: block;
+}
+
+.brand-wordmark strong {
+  font-size: 1.65rem;
+  font-weight: 800;
+}
+
+.brand-wordmark span {
+  font-size: 1.16rem;
+  font-weight: 400;
+}
+
+.brand:hover .brand-wordmark {
+  color: var(--purple);
   transform: translateY(-1px);
 }
 
@@ -553,7 +576,6 @@ h1 {
 }
 
 .lead {
-  max-width: 900px;
   margin: 24px 0 0;
   color: var(--muted);
   font-size: clamp(17px, 2vw, 21px);
@@ -1760,9 +1782,15 @@ h1 {
   display: inline-flex;
   min-height: 38px;
   align-items: center;
+  gap: 10px;
   color: var(--ink);
-  font-weight: 800;
+  font-weight: 400;
   text-decoration: none;
+}
+
+.contact-card a svg {
+  flex: 0 0 auto;
+  color: var(--purple);
 }
 
 .contact-card a:hover {
@@ -1939,7 +1967,7 @@ h1 {
     min-height: calc(100svh - 83px);
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0 0 32px;
+    padding: 42px 0 34px;
   }
 
   .home-hero-image {
@@ -1952,8 +1980,9 @@ h1 {
   }
 
   .home-hero-content h1 {
-    max-width: 720px;
-    font-size: clamp(3.8rem, 11vw, 5.7rem);
+    max-width: 620px;
+    font-size: clamp(3rem, 9.2vw, 4.45rem);
+    line-height: 1.02;
   }
 
   .home-hero-controls,
@@ -1963,7 +1992,7 @@ h1 {
   }
 
   .home-hero-controls {
-    margin-top: clamp(72px, 13vh, 140px);
+    margin-top: clamp(52px, 8vh, 92px);
     gap: 12px;
   }
 
@@ -1988,7 +2017,7 @@ h1 {
   .home-hero-links {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px;
-    margin-top: 18px;
+    margin-top: 14px;
   }
 
   .home-hero-links a {
@@ -2015,7 +2044,7 @@ h1 {
 
   .home-hero-dots {
     display: flex;
-    margin-top: 26px;
+    margin-top: 20px;
   }
 
   .hero-visual,
@@ -2084,7 +2113,8 @@ h1 {
 @media (max-width: 560px) {
   .home-hero-content h1 {
     max-width: 360px;
-    font-size: clamp(3.25rem, 15.5vw, 4.25rem);
+    font-size: clamp(2.75rem, 13vw, 3.55rem);
+    line-height: 1.04;
   }
 
   .hero-info-button {
@@ -2094,7 +2124,7 @@ h1 {
   }
 
   .home-hero-controls {
-    margin-top: clamp(54px, 9.5vh, 84px);
+    margin-top: clamp(42px, 7vh, 64px);
   }
 
   .hero-proof-card,
@@ -2115,7 +2145,7 @@ h1 {
   .home-hero-links {
     width: min(100% - 32px, 900px);
     gap: 10px;
-    margin-top: 14px;
+    margin-top: 12px;
   }
 
   .home-hero-links a {
@@ -2124,7 +2154,7 @@ h1 {
   }
 
   .home-hero-dots {
-    margin-top: 22px;
+    margin-top: 16px;
   }
 
   .hero-actions {

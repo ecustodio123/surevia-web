@@ -1,5 +1,6 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Mail } from 'lucide-react'
 import { useState } from 'react'
+import { FaWhatsapp } from 'react-icons/fa'
 
 import { insuranceOptions } from '../data/siteData'
 
@@ -77,10 +78,16 @@ export function ContactView() {
             Cuéntanos qué necesitas proteger y te ayudamos a orientar la cobertura.
           </p>
           <div className="contact-card">
-            <p>Victoria Goicochea</p>
+            <strong>Victoria Goicochea</strong>
             <strong>Business Developer</strong>
-            <a href="mailto:gerencia@sureviagroup.com">gerencia@sureviagroup.com</a>
-            <a href="tel:+51974630063">+51 974 630 063</a>
+            <a href="mailto:gerencia@sureviagroup.com">
+              <Mail size={18} />
+              <span>gerencia@sureviagroup.com</span>
+            </a>
+            <a href="https://wa.me/51974630063" target="_blank" rel="noreferrer">
+              <FaWhatsapp size={18} />
+              <span>+51 974 630 063</span>
+            </a>
           </div>
         </div>
         <form className="contact-form" onSubmit={handleContactSubmit}>
