@@ -259,11 +259,19 @@ main {
     linear-gradient(0deg, rgba(8, 6, 13, 0.34), rgba(8, 6, 13, 0.08) 44%);
 }
 
+.home-hero-picture,
 .home-hero-image {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+.home-hero-picture {
+  display: block;
+}
+
+.home-hero-image {
   object-fit: cover;
   will-change: opacity;
 }
@@ -330,9 +338,16 @@ main {
 .home-hero-links a {
   display: flex;
   align-items: center;
-  min-height: 78px;
   border-radius: 15px;
   text-decoration: none;
+}
+
+.hero-proof-card {
+  min-height: 78px;
+}
+
+.home-hero-links a {
+  min-height: 64px;
 }
 
 .hero-proof-card {
@@ -408,6 +423,10 @@ main {
   margin-top: 16px;
 }
 
+.mobile-label {
+  display: none;
+}
+
 .home-hero-links a {
   justify-content: flex-start;
   padding: 0 34px;
@@ -439,6 +458,32 @@ main {
 .home-hero-links a.is-primary:hover {
   color: white;
   background: rgba(76, 40, 126, 0.94);
+}
+
+.home-hero-dots {
+  position: relative;
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  gap: 10px;
+}
+
+.home-hero-dots button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.home-hero-dots button.is-active {
+  background: rgba(255, 255, 255, 0.34);
+  transform: scale(1.03);
 }
 
 .home-hero-arrows {
@@ -1890,50 +1935,87 @@ h1 {
   }
 
   .home-hero-carousel {
+    display: flex;
     min-height: calc(100svh - 83px);
-    padding-bottom: 34px;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 0 32px;
+  }
+
+  .home-hero-image {
+    transform: scale(1.06);
   }
 
   .home-hero-content {
     width: min(100% - 28px, 1180px);
-    padding-top: clamp(120px, 22vh, 190px);
+    padding-top: 0;
   }
 
   .home-hero-content h1 {
-    font-size: clamp(2.6rem, 10vw, 4rem);
+    max-width: 720px;
+    font-size: clamp(3.8rem, 11vw, 5.7rem);
   }
 
   .home-hero-controls,
   .home-hero-links {
-    width: min(100% - 28px, 1180px);
+    width: min(100% - 48px, 900px);
     grid-template-columns: 1fr;
   }
 
   .home-hero-controls {
-    margin-top: clamp(54px, 10vh, 92px);
+    margin-top: clamp(72px, 13vh, 140px);
+    gap: 12px;
   }
 
   .hero-proof-card,
   .home-hero-links a {
-    min-height: 62px;
-    border-radius: 14px;
-    padding-right: 18px;
-    padding-left: 22px;
+    min-height: 72px;
+    border-radius: 12px;
+    padding-right: 16px;
+    padding-left: 24px;
   }
 
   .hero-proof-card svg {
-    width: 44px;
-    height: 44px;
-    padding: 12px;
+    width: 48px;
+    height: 48px;
+    padding: 13px;
   }
 
   .home-hero-arrows {
-    top: 378px;
-    right: 18px;
-    bottom: auto;
-    left: 18px;
-    justify-content: space-between;
-    transform: translateY(-50%);
+    display: none;
+  }
+
+  .home-hero-links {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .home-hero-links a {
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 18px;
+    border-radius: 999px;
+    color: white;
+    background: rgba(255, 255, 255, 0.42);
+  }
+
+  .home-hero-links a.is-primary {
+    color: white;
+    background: rgba(76, 40, 126, 0.95);
+  }
+
+  .desktop-label {
+    display: none;
+  }
+
+  .mobile-label {
+    display: inline;
+  }
+
+  .home-hero-dots {
+    display: flex;
+    margin-top: 26px;
   }
 
   .hero-visual,
@@ -2001,33 +2083,48 @@ h1 {
 
 @media (max-width: 560px) {
   .home-hero-content h1 {
-    max-width: 330px;
+    max-width: 360px;
+    font-size: clamp(3.25rem, 15.5vw, 4.25rem);
   }
 
   .hero-info-button {
-    min-width: 210px;
+    min-width: 220px;
     min-height: 48px;
     font-size: 1rem;
   }
 
   .home-hero-controls {
-    margin-top: 68px;
+    margin-top: clamp(54px, 9.5vh, 84px);
   }
 
-  .home-hero-arrows {
-    top: 360px;
+  .hero-proof-card,
+  .home-hero-links a {
+    min-height: 56px;
   }
 
   .hero-proof-card span {
     font-size: 1rem;
   }
 
-  .home-hero-links a {
-    min-height: 56px;
+  .hero-proof-card svg {
+    width: 42px;
+    height: 42px;
+    padding: 11px;
   }
 
-  .home-hero-carousel {
-    padding-bottom: 28px;
+  .home-hero-links {
+    width: min(100% - 32px, 900px);
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .home-hero-links a {
+    padding: 0 12px;
+    font-size: 0.95rem;
+  }
+
+  .home-hero-dots {
+    margin-top: 22px;
   }
 
   .hero-actions {

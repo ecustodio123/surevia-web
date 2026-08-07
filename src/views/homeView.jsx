@@ -69,16 +69,17 @@ export function HomeView({ countersReady }) {
     <div className="home-page">
       <section className="home-hero-carousel" aria-label="Presentación principal">
         <AnimatePresence initial={false}>
-          <motion.img
-            className="home-hero-image"
+          <motion.picture
+            className="home-hero-picture"
             key={activeSlide.image}
-            src={activeSlide.image}
-            alt=""
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 1 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          />
+          >
+            <source media="(max-width: 900px)" srcSet={activeSlide.mobileImage} />
+            <img className="home-hero-image" src={activeSlide.image} alt="" />
+          </motion.picture>
         </AnimatePresence>
 
         <div className="home-hero-content">
@@ -102,11 +103,25 @@ export function HomeView({ countersReady }) {
             Diagnóstico
           </AppLink>
           <AppLink to="/coberturas">
-            Coberturas
+            <span className="desktop-label">Coberturas</span>
+            <span className="mobile-label">Servicios</span>
           </AppLink>
           <AppLink to="/contacto">
             Contacto
           </AppLink>
+        </div>
+
+        <div className="home-hero-dots" aria-label="Seleccionar imagen principal">
+          {homeSlides.map((slide, index) => (
+            <button
+              className={index === activeHomeSlide ? 'is-active' : ''}
+              key={slide.image}
+              type="button"
+              onClick={() => setActiveHomeSlide(index)}
+              aria-label={`Ver imagen ${index + 1}`}
+              aria-current={index === activeHomeSlide ? 'true' : undefined}
+            />
+          ))}
         </div>
 
         <div className="home-hero-arrows">
