@@ -1,7 +1,6 @@
 import { Handshake, MapPinned, ShieldCheck } from 'lucide-react'
 
 import { PageCTA } from '../components/pageCta'
-import { trustVideoPoster } from '../data/siteData'
 
 export function TrustView() {
   return (

@@ -3,6 +3,8 @@ import { AppLink } from './appLink'
 import { BrandMark } from './brandMark'
 
 export function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
     <footer className="site-footer">
       <div className="footer-brand">
@@ -28,6 +30,9 @@ export function Footer() {
         <a href="mailto:comercial@sureviagroup.com">comercial@sureviagroup.com</a>
         <a href="tel:+51974630063">+51 974 630 063</a>
       </div>
+      <p className="footer-legal">
+        © {currentYear} Surevia Group. Todos los derechos reservados.
+      </p>
     </footer>
   )
 }
