@@ -49,7 +49,8 @@ export function TrustView() {
         </div>
       </article>
 
-      <section className="trust-video-section" aria-labelledby="trust-video-title">
+      {/* //TODO: Update video */}
+      {/* <section className="trust-video-section" aria-labelledby="trust-video-title">
         <div>
           <p className="eyebrow">Lorem ipsum</p>
           <h2 id="trust-video-title">Lorem ipsum dolor sit amet</h2>
@@ -67,7 +68,7 @@ export function TrustView() {
             />
           </video>
         </div>
-      </section>
+      </section> */}
 
       <PageCTA
         eyebrow="Hablemos con contexto"
