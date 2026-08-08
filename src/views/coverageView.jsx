@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { PageCTA } from '../components/pageCta'
 import { coverageItems, otherCoverageItems } from '../data/siteData'
@@ -9,6 +9,7 @@ import { useMediaQuery } from '../hooks/useMediaQuery'
 export function CoverageView() {
   const [activeCoverageIndex, setActiveCoverageIndex] = useState(0)
   const [isCarouselHovered, setIsCarouselHovered] = useState(false)
+  const touchStartX = useRef(null)
   const isMobileCoverage = useMediaQuery('(max-width: 900px)')
   const coverageStep = isMobileCoverage ? 1 : 3
   const coverageGroupStarts = useMemo(
@@ -51,6 +52,26 @@ export function CoverageView() {
     return () => window.clearInterval(timer)
   }, [goToCoverage, isCarouselHovered])
 
+  const handleTouchStart = (event) => {
+    touchStartX.current = event.touches[0].clientX
+  }
+
+  const handleTouchEnd = (event) => {
+    if (touchStartX.current === null) {
+      return
+    }
+
+    const touchEndX = event.changedTouches[0].clientX
+    const distance = touchEndX - touchStartX.current
+    touchStartX.current = null
+
+    if (Math.abs(distance) < 45) {
+      return
+    }
+
+    goToCoverage(distance < 0 ? 1 : -1)
+  }
+
   return (
     <section className="content-page">
       <div className="page-heading compact">
@@ -73,6 +94,8 @@ export function CoverageView() {
           className="carousel-window"
           onMouseEnter={() => setIsCarouselHovered(true)}
           onMouseLeave={() => setIsCarouselHovered(false)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           <AnimatePresence mode="wait">
             <motion.div
